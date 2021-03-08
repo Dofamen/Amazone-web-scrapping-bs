@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
 
+
+PATH_DRIVER = '/Users/Mehdi/Documents/ChromDriver/chromedriver'
+
+
 def get_url(search_word, market_place, npage=1):
     """..................."""
     template = 'https://www.amazon.{}/s?k={}&page={}&ref=nb_sb_noss_2'
@@ -27,7 +31,7 @@ def get_all_info(results, bsellerRank, market_place):
         'sponsor': []
     }
     
-    sub_driver = webdriver.Chrome('/Users/Mehdi/Documents/ChromDriver/chromedriver')
+    sub_driver = webdriver.Chrome(PATH_DRIVER)
     HeadUrl= 'https://www.amazon.'+market_place
     for res in results:
         try:
